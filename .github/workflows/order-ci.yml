@@ -25,7 +25,7 @@ jobs:
     # Reuse the shared CI template from the shared workflow repository.
     # The reusable workflow file must exist at:
     # kubecart-ecom/shared-workflow/.github/workflows/ci-template.yml
-    uses: kubecart-ecom/shared-workflow/.github/workflows/ci-template.yml@main
+    uses: KubeCart-Ecommerce/shared-workflow/.github/workflows/ci-template.yml@main
 
     # Pass repository secrets to the reusable workflow.
     secrets: inherit

@@ -1,0 +1,31 @@
+name: MERN Microservice CI
+
+# This file goes in each service repository.
+# Example repositories: frontend, auth-service, cart-service, product-service.
+on:
+  push:
+    branches:
+      - dev
+
+  pull_request:
+    branches:
+      - dev
+      - main
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  packages: write
+
+jobs:
+  ci:
+    name: Call Shared CI Workflow
+
+    # Reuse the shared CI template from the shared workflow repository.
+    # The reusable workflow file must exist at:
+    # kubecart-ecom/shared-workflow/.github/workflows/ci-template.yml
+    uses: kubecart-ecom/shared-workflow/.github/workflows/ci-template.yml@main
+
+    # Pass repository secrets to the reusable workflow.
+    secrets: inherit
